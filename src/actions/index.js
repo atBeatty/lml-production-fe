@@ -9,6 +9,7 @@ export const fetchProductions = () => {
 }
 
 export const addProduction = (production) => {
+    debugger
     return (dispatch) => {
         return fetch('http://localhost:3000/productions', {
             method: "POST",
@@ -19,6 +20,7 @@ export const addProduction = (production) => {
         })
         .then(resp => resp.json())
         .then(json => {
+            console.log("POST RESPONSE", json)
             dispatch({type: "ADD_PRODUCTION", payload: json})
         })
     }

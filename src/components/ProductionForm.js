@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { addProduction } from '../actions'
 
 
@@ -25,8 +26,7 @@ class ProductionFrom extends React.Component {
     }
 
     render() {
-        return (
-            <form className="production-form">
+        return <form onSubmit={this.handleOnSubmit} className="production-form">
                 <label>
                     Name
                     <input onChange={this.handleFormChange} value={this.state.name} placeholder="NAME" name="name"></input>
@@ -39,8 +39,8 @@ class ProductionFrom extends React.Component {
                 <input type="submit" value="Add Production"/>
 
             </form>
-        )
+
     }
 }
 
-export default ProductionFrom
+export default connect(null, { addProduction })(ProductionFrom)
