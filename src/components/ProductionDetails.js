@@ -4,9 +4,11 @@ import CommentCard from '../components/CommentCard'
 
 
 const ProductionDetails = (props) => {
+
     
-    const crewToJSX = props.production.crew_members.map(member => {
-        return <div member-info><h2 key={member.id}>{member.name}</h2>
+    const crewToJSX = props.production.crew_members.map((member, i) => {
+        return <div key={i} className="member-info">
+        <h2 key={member.id}>{member.name}</h2>
         <h4>{member.email}</h4>
         <h4>{member.rate}</h4>
         <h4>{member.role}</h4>
@@ -17,8 +19,11 @@ const ProductionDetails = (props) => {
 
     return <div className="production-detail">
             <CommentCard />
-            {crewToJSX}
+            <div className="crew-member-container horizontal">
+                {crewToJSX}
+            </div>
+           
         </div>
 }
 
-export default ProductionDetails 
+export default ProductionDetails

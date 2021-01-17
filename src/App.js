@@ -1,7 +1,9 @@
 import Home from './components/Home'
+import {NavLink} from 'react-router-dom'
 import ProductionContainer from './containers/ProductionContainer'
 import ProductionForm from './components/ProductionForm'
 import ProductionCard from './components/ProductionCard'
+import CrewMemberInput from './components/CrewMemberInput'
 import Production from './containers/Production'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -10,12 +12,12 @@ function App() {
   // console.log(this.props)
   return <div className="App">
       <Router>
-      <Link to="/"><h2>Home</h2></Link>
-      <Link to="/productions"><h2>Productions</h2></Link>
-      <Link to="/productions/new"><h2>Add Production</h2></Link>
+      <NavLink to="/"><h2>Home</h2></NavLink>
+      <NavLink to="/productions"><h2>Productions</h2></NavLink>
+      <NavLink to="/productions/new"><h2>Add Production</h2></NavLink>
       <Switch>
         <Route exact path="/productions" component = {ProductionContainer}/>
-        <Route exact path="/productions/new" component = {ProductionForm}/>
+        <Route exact path="/productions/new" component = {ProductionForm }/>
         {/* <Route
             exact
             path="/"

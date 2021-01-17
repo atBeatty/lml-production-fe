@@ -1,17 +1,26 @@
 import React from 'react';
 import  { connect } from 'react-redux'
-import { fetchProductions } from '../actions'
+import { fetchProductions, updateProduction, addCrew } from '../actions'
+import CrewMemberInput from '../components/CrewMemberInput';
 import ProductionDetails from '../components/ProductionDetails'
 
 
 class Production extends React.Component {
    
-
+    constructor(props) {
+        super(props)
+        this.state = {
+            production: []
+        }
+    }
     
     render() {
-        return <div className="production-container">
+        return <div className="production-container border">
             Production Show
-            <ProductionDetails production={this.props.productions} key={this.props.productions.id} />
+            <h2>Name: {this.props.productions.name}</h2>
+            <h2>{this.props.productions.client}</h2>
+            <ProductionDetails updateCrew={this.props.updateProduction} production={this.props.productions} key={this.props.productions.id} />
+            <CrewMemberInput addCrew= {this.props.addCrew} updateCrew={this.props.updateProduction}/>
             </div>
     }
 }
@@ -25,4 +34,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchProductions })(Production)
+export default connect(mapStateToProps, { fetchProductions, updateProduction, addCrew })(Production)

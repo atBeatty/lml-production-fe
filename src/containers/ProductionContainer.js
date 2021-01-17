@@ -14,7 +14,7 @@ class ProductionContainer extends React.Component {
     
     render() {
         return <div className="production-container">
-            Production Container
+
             {this.props.productions.map(p => <div key={p.id}><ProductionCard production={p}/></div>)}
             </div>
     }

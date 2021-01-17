@@ -23,6 +23,10 @@ class ProductionFrom extends React.Component {
     handleOnSubmit = (e) => {
         e.preventDefault()
         this.props.addProduction(this.state)
+        this.setState({
+            name: '',
+            client: ''
+        })
     }
 
     render() {
