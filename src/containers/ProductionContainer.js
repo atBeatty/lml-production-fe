@@ -14,12 +14,12 @@ class ProductionContainer extends React.Component {
     
     componentDidMount() {
         this.props.fetchProductions()
-
+        
     }
     
     render() {
         return <div className="production-container">
-
+            
             {this.props.productions.map(p => <div key={p.id}><ProductionCard production={p}/></div>)}
             </div>
     }

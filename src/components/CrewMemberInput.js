@@ -20,17 +20,16 @@ class CrewMemberInput extends React.Component {
         })
     }
 
-    handleOnClick =(e) => {
-        console.log(this.state.currentMember)
-        this.props.renderMember(this.state.currentMember)
-        // this.props.history.push('/productions');
-    }
+    // handleOnClick =(e) => {
+    //     console.log(this.state.currentMember)
+    //     this.props.renderMember(this.state.currentMember)
+    //     // this.props.history.push('/productions');
+    // }
     
     handleOnSubmit = (e) => {
         // let pageId = window.location.href.slice(-1)
         e.preventDefault()
         this.props.addCrewMember(this.props.production.crew_id, this.state.currentMember)
-        debugger
         this.props.renderMember(this.state.currentMember)
         this.setState({
             rating: 0,

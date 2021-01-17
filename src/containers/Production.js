@@ -10,7 +10,7 @@ class Production extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            production: [],
+            production: {},
             key: ''
         }
     }
@@ -18,24 +18,29 @@ class Production extends React.Component {
     componentDidMount() {
 
         console.log(!!this.props.productions.crew)
-        this.setState({
-            production: [this.props.productions]
+        this.setState({...this.state,
+            production: this.props.productions
         })
     }
 
     componentDidUpdate() {
-        this.props.fetchProductions()
+        // this.props.fetchProductions()
         console.log("UYES")
     }
     
     renderAdditionalMember = (member) => {
-        debugger
-console.log(member)
-        this.setState({...this.state,
-            key: 40320
+        let currentCrewMembers = this.state.production.crew_members
+        currentCrewMembers.push(member)
+        // debugger        
+        return this.setState({...this.state,
 
+
+            production: {...this.state.production,
+                crew_members: [currentCrewMembers]
+            }
         })
         
+        debugger
         
         // debugger
 
@@ -49,7 +54,7 @@ console.log(member)
 
             <ProductionDetails updateCrew={this.props.updateProduction} key={this.state.key} thisProductionShouldUpdate={this.state.production} production={this.props.productions} />
             
-            <CrewMemberInput renderMember={(member) => this.renderAdditionalMember(member)} production={this.props.productions} addCrew={this.props.addCrew} updateCrew={this.props.updateProduction}/>
+            <CrewMemberInput renderMember={this.renderAdditionalMember} production={this.props.productions} addCrew={this.props.addCrew} updateCrew={this.props.updateProduction}/>
             </div>
     }
 }

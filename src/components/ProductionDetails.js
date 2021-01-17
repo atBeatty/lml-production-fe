@@ -5,8 +5,8 @@ import CommentCard from '../components/CommentCard'
 
 const ProductionDetails = (props) => {
 
-    console.log(props.thisProductionShouldUpdate)
-    const crewToJSX = props.production.crew_members.map((member, i) => {
+    console.log(props.thisProductionShouldUpdate, "THIS SHOULD UPDATE")
+    let crewToJSX = props.production.crew_members.map((member, i) => {
         return <div key={i} className="member-info">
         <h2>{member.name}</h2>
         <h4>{member.email}</h4>
