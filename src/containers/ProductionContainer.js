@@ -2,14 +2,19 @@ import React from 'react';
 import  { connect } from 'react-redux'
 import { fetchProductions } from '../actions'
 import ProductionCard from '../components/ProductionCard'
-import ProductionFrom from '../components/ProductionForm';
 
 
 class ProductionContainer extends React.Component {
-   
+   constructor(props) {
+       super(props)
+       this.state = {
+           productions: []
+       }
+   }
     
     componentDidMount() {
         this.props.fetchProductions()
+
     }
     
     render() {

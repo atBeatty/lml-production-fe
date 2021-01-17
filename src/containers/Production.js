@@ -10,8 +10,35 @@ class Production extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            production: []
+            production: [],
+            key: ''
         }
+    }
+
+    componentDidMount() {
+
+        console.log(!!this.props.productions.crew)
+        this.setState({
+            production: [this.props.productions]
+        })
+    }
+
+    componentDidUpdate() {
+        this.props.fetchProductions()
+        console.log("UYES")
+    }
+    
+    renderAdditionalMember = (member) => {
+        debugger
+console.log(member)
+        this.setState({...this.state,
+            key: 40320
+
+        })
+        
+        
+        // debugger
+
     }
     
     render() {
@@ -19,15 +46,17 @@ class Production extends React.Component {
             Production Show
             <h2>Name: {this.props.productions.name}</h2>
             <h2>{this.props.productions.client}</h2>
-            <ProductionDetails updateCrew={this.props.updateProduction} production={this.props.productions} key={this.props.productions.id} />
-            <CrewMemberInput addCrew= {this.props.addCrew} updateCrew={this.props.updateProduction}/>
+
+            <ProductionDetails updateCrew={this.props.updateProduction} key={this.state.key} thisProductionShouldUpdate={this.state.production} production={this.props.productions} />
+            
+            <CrewMemberInput renderMember={(member) => this.renderAdditionalMember(member)} production={this.props.productions} addCrew={this.props.addCrew} updateCrew={this.props.updateProduction}/>
             </div>
     }
 }
 const mapStateToProps = state => {
     let pageId = parseInt(window.location.href.slice(-1))
     let production = state.productions.find(prod => prod.id === pageId)
-
+    // debugger
     
     return {
         productions: production

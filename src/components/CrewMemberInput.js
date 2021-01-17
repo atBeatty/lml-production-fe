@@ -8,16 +8,41 @@ class CrewMemberInput extends React.Component {
         super(props)
         this.state = {
             rating: 0,
-            currentMember: {}
+            currentMember: {},
+            production: {}
         }
     }
 
+    componentDidMount() {
+        console.log("mount", this.props)
+        this.setState({...this.state,
+            production: this.props.production
+        })
+    }
 
+    handleOnClick =(e) => {
+        console.log(this.state.currentMember)
+        this.props.renderMember(this.state.currentMember)
+        // this.props.history.push('/productions');
+    }
+    
     handleOnSubmit = (e) => {
-        let pageId = window.location.href.slice(-1)
+        // let pageId = window.location.href.slice(-1)
         e.preventDefault()
+        this.props.addCrewMember(this.props.production.crew_id, this.state.currentMember)
         debugger
-        this.props.addCrewMember(pageId, this.state.currentMember)
+        this.props.renderMember(this.state.currentMember)
+        this.setState({
+            rating: 0,
+            currentMember: {
+                name:'',
+                email: '',
+                role: '',
+                rate: '',
+                employer: ''
+            },
+            production: {}
+        })
     }
     handleOnChange = (e) => {
 
@@ -31,8 +56,11 @@ class CrewMemberInput extends React.Component {
 
 
    render() {
+
        return (
-               <div className="crew-form-container">
+            <div className="crew-form-container">
+
+                <button onClick={this.handleOnClick}>This Button Uses renderMembers as callback</button>
                 {/* {this.crewCheck()} */}
             <form className="vertical crew-input" onSubmit={this.handleOnSubmit}>
             <label htmlFor="name">Crew Member: </label>
@@ -49,7 +77,7 @@ class CrewMemberInput extends React.Component {
             <input onChange={e => this.handleOnChange(e)} type="integer" value={this.state.currentMember.rate} name="rate"/>
 
 
-            <input type="submit" value={this.props.action === "ADD_CREW" ? "Add Crew" : "Update Crew"}/>
+            <input type="submit" value="Update Crew"/>
             </form>
             </div>
        )
@@ -57,5 +85,11 @@ class CrewMemberInput extends React.Component {
 }
 
 
-
-export default connect(null, { addCrewMember })(CrewMemberInput) 
+const mapStateToProps = (state) => {
+        let pageId = window.location.href.slice(-1)
+        let production = state.productions.find(prod => prod.id === parseInt(pageId))
+    return {
+        production: production
+    }
+}
+export default connect(mapStateToProps, { addCrewMember })(CrewMemberInput) 

@@ -16,8 +16,8 @@ function App() {
       <NavLink to="/productions"><h2>Productions</h2></NavLink>
       <NavLink to="/productions/new"><h2>Add Production</h2></NavLink>
       <Switch>
-        <Route exact path="/productions" component = {ProductionContainer}/>
-        <Route exact path="/productions/new" component = {ProductionForm }/>
+        <Route exact path="/productions" component={ProductionContainer}/>
+        <Route exact path="/productions/new" component={ProductionForm }/>
         {/* <Route
             exact
             path="/"

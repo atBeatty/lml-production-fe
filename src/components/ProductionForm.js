@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { addProduction } from '../actions'
 
 
-class ProductionFrom extends React.Component {
+class ProductionForm extends React.Component {
 
     constructor(props) {
         super(props)
@@ -27,6 +27,7 @@ class ProductionFrom extends React.Component {
             name: '',
             client: ''
         })
+        this.props.history.push('/productions');
     }
 
     render() {
@@ -47,4 +48,4 @@ class ProductionFrom extends React.Component {
     }
 }
 
-export default connect(null, { addProduction })(ProductionFrom)
+export default connect(null, { addProduction })(ProductionForm)
