@@ -16,7 +16,6 @@ class Production extends React.Component {
     }
 
     componentDidMount() {
-
         console.log(!!this.props.productions.crew)
         this.setState({...this.state,
             production: this.props.productions
@@ -24,14 +23,12 @@ class Production extends React.Component {
     }
 
     componentDidUpdate() {
-        // this.props.fetchProductions()
         console.log("UYES")
     }
     
     renderAdditionalMember = (member) => {
         let currentCrewMembers = this.state.production.crew_members
         currentCrewMembers.push(member)
-        // debugger        
         return this.setState({...this.state,
 
 
@@ -39,22 +36,17 @@ class Production extends React.Component {
                 crew_members: [currentCrewMembers]
             }
         })
-        
-        debugger
-        
-        // debugger
-
     }
     
     render() {
         return <div className="production-container border">
-            Production Show
+
             <h2>Name: {this.props.productions.name}</h2>
             <h2>{this.props.productions.client}</h2>
 
             <ProductionDetails updateCrew={this.props.updateProduction} key={this.state.key} thisProductionShouldUpdate={this.state.production} production={this.props.productions} />
             
-            <CrewMemberInput renderMember={this.renderAdditionalMember} production={this.props.productions} addCrew={this.props.addCrew} updateCrew={this.props.updateProduction}/>
+            <CrewMemberInput renderMember={this.renderAdditionalMember} production={this.props.productions} updateCrew={this.props.updateProduction}/>
             </div>
     }
 }
@@ -68,4 +60,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchProductions, updateProduction, addCrew })(Production)
+export default connect(mapStateToProps, { fetchProductions, updateProduction })(Production)

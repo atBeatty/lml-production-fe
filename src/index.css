@@ -1,9 +1,15 @@
 * {
+  font-family: 'Sora', sans-serif;
   padding: 5px;
   box-sizing: border-box;
   margin: none;
   margin-block-end: 0;
   margin-block-start: 0;
+}
+.production-card h2 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
 }
 .border {
   border: .5px solid lightblue;
@@ -28,6 +34,27 @@
 .comment-card {
   flex-grow: 3;
 }
-.production-detail {
 
+
+
+
+
+
+
+.box {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  position: fixed;
+
+  top: 5em;
+  left: 1em;
+}
+
+.box.otherPosition {
+  left: 10em;
+}
+
+.label.otherPosition {
+  margin-top: 2em;
 }

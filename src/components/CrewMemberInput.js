@@ -1,7 +1,7 @@
+import React from 'react'
 import  { connect } from 'react-redux'
 import { addCrewMember } from '../actions'
 
-import React from 'react'
 
 class CrewMemberInput extends React.Component {
     constructor(props) {
@@ -20,14 +20,7 @@ class CrewMemberInput extends React.Component {
         })
     }
 
-    // handleOnClick =(e) => {
-    //     console.log(this.state.currentMember)
-    //     this.props.renderMember(this.state.currentMember)
-    //     // this.props.history.push('/productions');
-    // }
-    
     handleOnSubmit = (e) => {
-        // let pageId = window.location.href.slice(-1)
         e.preventDefault()
         this.props.addCrewMember(this.props.production.crew_id, this.state.currentMember)
         this.props.renderMember(this.state.currentMember)
@@ -43,6 +36,7 @@ class CrewMemberInput extends React.Component {
             production: {}
         })
     }
+
     handleOnChange = (e) => {
 
         e.preventDefault()
@@ -59,8 +53,7 @@ class CrewMemberInput extends React.Component {
        return (
             <div className="crew-form-container">
 
-                <button onClick={this.handleOnClick}>This Button Uses renderMembers as callback</button>
-                {/* {this.crewCheck()} */}
+            {/* <button onClick={this.handleOnClick}>This Button Uses renderMembers as callback</button> */}
             <form className="vertical crew-input" onSubmit={this.handleOnSubmit}>
             <label htmlFor="name">Crew Member: </label>
             <input onChange={e => this.handleOnChange(e)} type="text" name="name" value={this.state.currentMember.name}/>

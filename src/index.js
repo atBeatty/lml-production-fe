@@ -8,9 +8,8 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 import reportWebVitals from './reportWebVitals';
-
+// import anime from 'animejs/lib/anime.es.js';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-
 let store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
@@ -22,3 +21,5 @@ ReactDOM.render(
 );
 
 reportWebVitals();
+
+

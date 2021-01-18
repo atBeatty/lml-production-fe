@@ -3,8 +3,15 @@ import CommentCard from '../components/CommentCard'
 // import ProductionCard from '../components/ProductionCard'
 
 
-const ProductionDetails = (props) => {
 
+
+
+
+
+
+const ProductionDetails = (props) => {
+    
+    
     console.log(props.thisProductionShouldUpdate, "THIS SHOULD UPDATE")
     let crewToJSX = props.production.crew_members.map((member, i) => {
         return <div key={i} className="member-info">
@@ -18,7 +25,7 @@ const ProductionDetails = (props) => {
     })
 
     return <div className="production-detail">
-            <CommentCard />
+            {/* <CommentCard /> */}
             <div className="crew-member-container horizontal">
                 {crewToJSX}
             </div>

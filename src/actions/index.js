@@ -42,21 +42,21 @@ export const addCrewMember = (id, crewMember) => {
         })
     }
 }
-export const addCrew = (crewMember) => {
-    return (dispatch) => {
-        return fetch(`http://localhost:3000/crew_members`, {
-            method: "POST",
-            headers: {
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(crewMember)
-        })
-        .then(resp => resp.json())
-        .then(json => {
-            dispatch({type: "ADD_CREW", payload: json})
-        })
-    }
-}
+// export const addCrew = (crewMember) => {
+//     return (dispatch) => {
+//         return fetch(`http://localhost:3000/crew_members`, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type":"application/json"
+//             },
+//             body: JSON.stringify(crewMember)
+//         })
+//         .then(resp => resp.json())
+//         .then(json => {
+//             dispatch({type: "ADD_CREW", payload: json})
+//         })
+//     }
+// }
 export const updateProduction = (production) => {
     // debugger
     return (dispatch) => {
