@@ -9,7 +9,6 @@ export const fetchProductions = () => {
 }
 
 export const addProduction = (production) => {
-    // debugger
     return (dispatch) => {
         return fetch('http://localhost:3000/productions', {
             method: "POST",
@@ -20,7 +19,6 @@ export const addProduction = (production) => {
         })
         .then(resp => resp.json())
         .then(json => {
-            // console.log("POST RESPONSE", json)
             dispatch({type: "ADD_PRODUCTION", payload: json})
         })
     }
@@ -42,23 +40,8 @@ export const addCrewMember = (id, crewMember) => {
         })
     }
 }
-// export const addCrew = (crewMember) => {
-//     return (dispatch) => {
-//         return fetch(`http://localhost:3000/crew_members`, {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type":"application/json"
-//             },
-//             body: JSON.stringify(crewMember)
-//         })
-//         .then(resp => resp.json())
-//         .then(json => {
-//             dispatch({type: "ADD_CREW", payload: json})
-//         })
-//     }
-// }
+
 export const updateProduction = (production) => {
-    // debugger
     return (dispatch) => {
         return fetch(`http://localhost:3000/productions/${production.id}`, {
             method: "PATCH",
@@ -69,7 +52,6 @@ export const updateProduction = (production) => {
         })
         .then(resp => resp.json())
         .then(json => {
-            // console.log("POST RESPONSE", json)
             dispatch({type: "UPDATE_PRODUCTION", payload: json})
         })
     }

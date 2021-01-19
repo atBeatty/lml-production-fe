@@ -8,6 +8,14 @@ import Box from './containers/Box'
 
 
 function App() {
+
+// if (window.performance) {
+//   console.info("window.performance works fine on this browser");
+// }
+
+// if (window.performance.navigation["type"] === 1) {
+//   console.log(window.performance.navigation["type"])
+// }
   // console.log(this.props)
   return <div className="App">
       <Router>

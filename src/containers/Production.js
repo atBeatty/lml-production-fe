@@ -30,8 +30,6 @@ class Production extends React.Component {
         let currentCrewMembers = this.state.production.crew_members
         currentCrewMembers.push(member)
         return this.setState({...this.state,
-
-
             production: {...this.state.production,
                 crew_members: [currentCrewMembers]
             }
@@ -40,16 +38,16 @@ class Production extends React.Component {
     
     render() {
         return <div className="production-container border">
-
-            <h2>Name: {this.props.productions.name}</h2>
-            <h2>{this.props.productions.client}</h2>
+            <h1>Name: {this.props.productions.name}</h1>
+            <h2>Client: {this.props.productions.client}</h2>
 
             <ProductionDetails updateCrew={this.props.updateProduction} key={this.state.key} thisProductionShouldUpdate={this.state.production} production={this.props.productions} />
-            
             <CrewMemberInput renderMember={this.renderAdditionalMember} production={this.props.productions} updateCrew={this.props.updateProduction}/>
             </div>
     }
 }
+
+
 const mapStateToProps = state => {
     let pageId = parseInt(window.location.href.slice(-1))
     let production = state.productions.find(prod => prod.id === pageId)

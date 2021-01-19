@@ -1,27 +1,12 @@
 import React from 'react'
 import CommentCard from '../components/CommentCard'
-// import ProductionCard from '../components/ProductionCard'
-
-
-
-
-
-
-
+import MemberDetails from '../components/MemberDetails'
 
 const ProductionDetails = (props) => {
     
     
-    console.log(props.thisProductionShouldUpdate, "THIS SHOULD UPDATE")
     let crewToJSX = props.production.crew_members.map((member, i) => {
-        return <div key={i} className="member-info">
-        <h2>{member.name}</h2>
-        <h4>{member.email}</h4>
-        <h4>{member.rate}</h4>
-        <h4>{member.role}</h4>
-        <h4>{member.employer}</h4>
-
-        </div>
+        return <MemberDetails key={member.id} name={member.name} email={member.email} rate={member.rate} role={member.role} employer={member.employer} />
     })
 
     return <div className="production-detail">

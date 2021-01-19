@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import productionsReducer from './productionsReducer'
-import productions from './productionsReducer'
+import crewMembersReducer from './crewMembersReducer'
+
 
 
 export default combineReducers({
-    productions: productionsReducer
+    productions: productionsReducer,
+    crewMembers: crewMembersReducer
 })

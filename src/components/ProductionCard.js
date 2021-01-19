@@ -16,13 +16,11 @@ const ProductionCard = (props) => {
             rotate: 300,
             easing: "easeOutSine"
         })
- 
-        
-      
    }
+
     return <div className="production-card">
         <h2>{props.production.name}</h2>
-        <p className="production-content">{props.production.client}</p>
+        <h4 className="production-content">{props.production.client}</h4>
         <Link to={`/productions/${props.production.id}`}>Show Page</Link>
         <button onClick={handleClick}></button>
     </div>
