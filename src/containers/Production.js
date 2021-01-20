@@ -17,20 +17,13 @@ class Production extends React.Component {
     componentDidMount() {
         let pageId = parseInt(window.location.href.slice(-1))
         this.props.fetchProduction(pageId)
-        console.log("PRODUCTION HAS MOUNTED IN COMP", pageId, this.props.production)
+        console.log(window.location.href)
         this.setState({
             production: this.props.production
         })
   
     }
 
-    
-    renderAdditionalMember = (member) => {
-
-        console.log(this.state.production)
-        
-    }
-    
     render() {
         console.log(this.props.production)
         return <div className="production-container border">
@@ -38,19 +31,17 @@ class Production extends React.Component {
             <h2>{this.props.production.client}</h2>
 
             <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} />
-            <CrewMemberInput renderMember={this.renderAdditionalMember} production={this.props.production} addCrewMember={this.props.addCrewMember} updateCrew={this.props.updateProduction}/>
+            <CrewMemberInput production={this.props.production} addCrewMember={this.props.addCrewMember}/>
             </div>
     }
 }
 
 
 const mapStateToProps = state => {
-    // let pageId = parseInt(window.location.href.slice(-1))
-    // let production = state.productions.find(prod => prod.id === pageId)
-    // console.log(state)
+ 
     return {
         production: state.production
     }
 }
 
-export default connect(mapStateToProps, { fetchProduction, updateProduction, addCrewMember })(Production)
+export default connect(mapStateToProps, { fetchProduction, addCrewMember })(Production)

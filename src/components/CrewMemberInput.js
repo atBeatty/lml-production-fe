@@ -1,6 +1,6 @@
 import React from 'react'
 import  { connect } from 'react-redux'
-import { addCrewMember, updateProduction } from '../actions'
+import { addCrewMember } from '../actions'
 
 
 class CrewMemberInput extends React.Component {
@@ -24,7 +24,7 @@ class CrewMemberInput extends React.Component {
         e.preventDefault()
         this.props.addCrewMember(this.props.production.crew_id, this.state.currentMember)
         // this.props.updateProduction(this.props.production)
-        this.props.renderMember(this.state.currentMember)
+        // this.props.renderMember(this.state.currentMember)
         this.setState({
             rating: 0,
             currentMember: {
@@ -86,4 +86,4 @@ const mapStateToProps = (state) => {
         production: production
     }
 }
-export default connect(mapStateToProps, { addCrewMember, updateProduction })(CrewMemberInput) 
+export default connect(mapStateToProps, { addCrewMember })(CrewMemberInput) 
