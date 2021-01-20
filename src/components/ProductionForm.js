@@ -31,17 +31,17 @@ class ProductionForm extends React.Component {
     }
 
     render() {
-        return <form onSubmit={this.handleOnSubmit} className="production-form">
+        return <form onSubmit={this.handleOnSubmit} className="vertical production-form">
                 <label>
-                    Name
                     <input onChange={this.handleFormChange} value={this.state.name} placeholder="NAME" name="name"></input>
                 </label>
                 <label>
-                    Client
                     <input onChange={this.handleFormChange} value={this.state.client} name="client" placeholder="CLIENT"></input>
                 </label>
+                <label>
 
                 <input type="submit" value="Add Production"/>
+                </label>
 
             </form>
 

@@ -5,10 +5,10 @@ import MemberDetails from '../components/MemberDetails'
 const ProductionDetails = (props) => {
     console.log(props)
 
-   const propsToJSX = () => {
+   const crewToJSX = () => {
 
        if (props.crew) {
-           return props.crew.map(member => <h2>{member.name}</h2>)
+           return props.crew.map(member => <MemberDetails key={member.id} member={member}/>)
         } else {
             return "No Crew?"
         }
@@ -16,10 +16,9 @@ const ProductionDetails = (props) => {
     return <div className="production-detail">
         <h1>{props.production.name}</h1>
             {/* <CommentCard /> */}
-            {propsToJSX()}
-            <div className="crew-member-container horizontal">
                 <h4>{props.production.client}</h4>
-                {/* <h2>{props.production.client}</h2> */}
+            <div className="crew-member-container horizontal">
+            {crewToJSX()}
             </div>
            
         </div>

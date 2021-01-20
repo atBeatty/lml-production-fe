@@ -27,8 +27,8 @@ class Production extends React.Component {
     render() {
         console.log(this.props.production)
         return <div className="production-container border">
-            <h1>{this.props.production.name}</h1>
-            <h2>{this.props.production.client}</h2>
+            {/* <h1>{this.props.production.name}</h1>
+            <h2>{this.props.production.client}</h2> */}
 
             <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} />
             <CrewMemberInput production={this.props.production} addCrewMember={this.props.addCrewMember}/>

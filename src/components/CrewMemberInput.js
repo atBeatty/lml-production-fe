@@ -53,27 +53,25 @@ class CrewMemberInput extends React.Component {
    render() {
 
        return (
-            <div className="crew-form-container">
-
-            {/* <button onClick={this.handleOnClick}>This Button Uses renderMembers as callback</button> */}
+        <div className="crew-form-container">
             <form className="vertical crew-input" onSubmit={this.handleOnSubmit}>
-            <label htmlFor="name">Crew Member: </label>
-            <input onChange={e => this.handleOnChange(e)} type="text" name="name" value={this.state.currentMember.name}/>
-            
-            <label htmlFor="client">Email: </label>
-            <input onChange={e => this.handleOnChange(e)} type="text" value={this.state.currentMember.email} name="email"/>
-            <label htmlFor="employer">Employer: </label>
-            <input onChange={e => this.handleOnChange(e)} type="text" name="employer" value={this.state.currentMember.employer}/>
-            <label htmlFor="employer">Role: </label>
-            <input onChange={e => this.handleOnChange(e)} type="text" name="role" value={this.state.currentMember.role}/>
-            
-            <label htmlFor="rate">Rate: </label>
-            <input onChange={e => this.handleOnChange(e)} type="integer" value={this.state.currentMember.rate} name="rate"/>
+                <label htmlFor="name">Crew Member: </label>
+                <input onChange={e => this.handleOnChange(e)} type="text" placeholder="NAME" name="name" value={this.state.currentMember.name}/>
+                
+                <label htmlFor="client"/>
+                <input onChange={e => this.handleOnChange(e)} type="text" placeholder="EMAIL" value={this.state.currentMember.email} name="email"/>
+                <label htmlFor="employer"/>
+                <input onChange={e => this.handleOnChange(e)} type="text" placeholder="EMPLOYER" name="employer" value={this.state.currentMember.employer}/>
+                <label htmlFor="employer"/>
+                <input onChange={e => this.handleOnChange(e)} type="text" placeholder="ROLE" name="role" value={this.state.currentMember.role}/>
+                
+                <label htmlFor="rate"/>
+                <input onChange={e => this.handleOnChange(e)} placeholder="$" type="integer" value={this.state.currentMember.rate} name="rate"/>
 
 
-            <input type="submit" value="Update Crew"/>
+                <input type="submit" value="Update Crew"/>
             </form>
-            </div>
+        </div>
        )
    }
 }

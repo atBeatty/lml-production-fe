@@ -9,6 +9,9 @@
 a {
   width:fit-content;
 }
+form input{
+  width: 300px;
+}
 h4 {
   font-weight: 100;
 }
