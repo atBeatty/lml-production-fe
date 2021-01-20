@@ -7,6 +7,15 @@ export const fetchProductions = () => {
         })
     }
 }
+export const fetchProduction = (id) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/productions/${id}`)
+        .then(resp => resp.json())
+        .then(json => {
+            dispatch({type: "SET_PRODUCTION", payload: json})
+        })
+    }
+}
 
 export const addProduction = (production) => {
     return (dispatch) => {

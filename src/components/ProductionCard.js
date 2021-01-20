@@ -8,9 +8,16 @@ import anime from 'animejs'
 
 const ProductionCard = (props) => {
    const handleClick = (e) => {
+    anime({
+        targets: 'div',
+        left: '240px',
+        backgroundColor: '#FFF',
+        borderRadius: ['0%', '50%'],
+        easing: 'easeInOutQuad'
+      });
     anime.timeline()
         .add({
-            targets: ".production-content",
+            targets: "div",
             translateX: [0, 200],
             duration: 500,
             rotate: 300,

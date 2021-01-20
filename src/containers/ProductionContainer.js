@@ -2,7 +2,7 @@ import React from 'react';
 import  { connect } from 'react-redux'
 import { fetchProductions } from '../actions'
 import ProductionCard from '../components/ProductionCard'
-
+import Production from './Production'
 
 class ProductionContainer extends React.Component {
    constructor(props) {
@@ -21,6 +21,7 @@ class ProductionContainer extends React.Component {
         return <div className="production-container">
             
             {this.props.productions.map(p => <div key={p.id}><ProductionCard production={p}/></div>)}
+            {/* <Production/> */}
             </div>
     }
 
