@@ -26,9 +26,8 @@ const ProductionCard = (props) => {
    }
 
     return <div className="production-card">
-        {/* <h2>{props.production.name}</h2>
-        <h4 className="production-content">{props.production.client}</h4> */}
-        <ProductionDetails crew={props.production.crew_members} production={props.production} />
+       <h2>{props.production.name}</h2>
+       <h4>{props.production.client}</h4>
         <Link to={`/productions/${props.production.id}`}>Show Page</Link>
         <button onClick={handleClick}></button>
     </div>
