@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import ProductionDetails from '../components/ProductionDetails'
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import anime from 'animejs'
@@ -26,8 +26,9 @@ const ProductionCard = (props) => {
    }
 
     return <div className="production-card">
-        <h2>{props.production.name}</h2>
-        <h4 className="production-content">{props.production.client}</h4>
+        {/* <h2>{props.production.name}</h2>
+        <h4 className="production-content">{props.production.client}</h4> */}
+        <ProductionDetails crew={props.production.crew_members} production={props.production} />
         <Link to={`/productions/${props.production.id}`}>Show Page</Link>
         <button onClick={handleClick}></button>
     </div>

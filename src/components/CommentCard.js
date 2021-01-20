@@ -15,7 +15,7 @@ class CommentCard extends React.Component {
         this.setState({
             comment: e.target.value
         })
-        console.log(this.state)
+        // console.log(this.state)
         // this.updateProduction(this.state)
     }
     handleSubmitComment = (e) => {

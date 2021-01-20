@@ -44,11 +44,12 @@ export const addCrewMember = (id, crewMember) => {
         })
         .then(resp => resp.json())
         .then(json => {
-            console.log("POST RESPONSE", json)
+            // console.log("POST RESPONSE", json)
             dispatch({type: "ADD_CREWMEMBER", payload: json})
         })
     }
 }
+
 
 export const updateProduction = (production) => {
     return (dispatch) => {

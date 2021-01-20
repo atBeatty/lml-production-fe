@@ -7,9 +7,7 @@ export default (state=[], action) => {
         
         case 'ADD_PRODUCTION':
             return [...state, action.payload]
-        case 'ADD_CREWMEMBER':
-            console.log("ADDCREW MEMBER", action.payload, state)
-            return [...state, {crewMember: action.payload}]
+        
         case 'ADD_CREW':
             
             return [...state, action.payload]

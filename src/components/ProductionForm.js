@@ -14,7 +14,7 @@ class ProductionForm extends React.Component {
     }
 
     handleFormChange = (e) => {
-        console.log(this.state, this.props)
+        // console.log(this.state, this.props)
         this.setState({
             [e.target.name]: e.target.value
         })
