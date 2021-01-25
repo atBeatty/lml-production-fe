@@ -5,11 +5,11 @@ import React from 'react'
 
 
 let animationHome = () => {
-    anime.timeline()
-    .add({
+    anime({
+
         targets: "div.home-page",
-        translateX: [0, 200],
-        duration: 500,
+        translateX: 200,
+        duration: 1500,
         // rotate: 300,
         easing: "easeOutSine"
     })

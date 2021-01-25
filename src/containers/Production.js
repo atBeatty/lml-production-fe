@@ -30,7 +30,8 @@ class Production extends React.Component {
             {/* <h1>{this.props.production.name}</h1>
             <h2>{this.props.production.client}</h2> */}
 
-            <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} />
+            <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} deleteMember={this.props.deleteMember}/>
+            
             <CrewMemberInput production={this.props.production} addCrewMember={this.props.addCrewMember}/>
             </div>
     }

@@ -13,9 +13,13 @@ function App(props) {
 
   return <div className="App">
       <Router>
+        <div className="navbar horizontal margin-bottom">
+
       <NavLink to="/"><h2>Home</h2></NavLink>
+
       <NavLink to="/productions"><h2>Productions</h2></NavLink>
       <NavLink to="/productions/new"><h2>Add Production</h2></NavLink>
+        </div>
       <Switch>
         <Route exact path="/productions" component={ ProductionContainer }/>
         <Route exact path="/productions/new" component={ProductionForm }/>

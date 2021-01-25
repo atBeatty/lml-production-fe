@@ -13,13 +13,13 @@ const ProductionDetails = (props) => {
             return "No Crew?"
         }
     } 
-    return <div className="production-detail">
+    return <div className="margin-top production-detail">
         <h1>{props.production.name}</h1>
             {/* <CommentCard /> */}
                 <h4>{props.production.client}</h4>
-            <div className="crew-member-container horizontal">
+            <div className="margin-top crew-member-container horizontal">
             {crewToJSX()}
-            </div>
+            </div> 
            
         </div>
 }
