@@ -8,7 +8,7 @@ const ProductionDetails = (props) => {
    const crewToJSX = () => {
 
        if (props.crew) {
-           return props.crew.map(member => <MemberDetails key={member.id} member={member}/>)
+           return props.crew.map(member => <MemberDetails key={member.id} deleteMember={props.deleteMember} member={member}/>)
         } else {
             return "No Crew?"
         }

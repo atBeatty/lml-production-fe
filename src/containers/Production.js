@@ -1,6 +1,6 @@
 import React from 'react';
 import  { connect } from 'react-redux'
-import { addCrewMember, fetchProduction, updateProduction, addCrew } from '../actions'
+import { addCrewMember, fetchProduction, removeCrewMember, updateProduction, addCrew } from '../actions'
 import CrewMemberInput from '../components/CrewMemberInput';
 import ProductionDetails from '../components/ProductionDetails'
 
@@ -30,8 +30,8 @@ class Production extends React.Component {
             {/* <h1>{this.props.production.name}</h1>
             <h2>{this.props.production.client}</h2> */}
 
-            <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} deleteMember={this.props.deleteMember}/>
-            
+            <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} deleteMember={this.props.removeCrewMember}/>
+
             <CrewMemberInput production={this.props.production} addCrewMember={this.props.addCrewMember}/>
             </div>
     }
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { fetchProduction, addCrewMember })(Production)
+export default connect(mapStateToProps, { fetchProduction, addCrewMember, removeCrewMember })(Production)

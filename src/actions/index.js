@@ -29,6 +29,18 @@ export const addProduction = (production) => {
         .then(resp => resp.json())
         .then(json => {
             dispatch({type: "ADD_PRODUCTION", payload: json})
+        }).catch(errors => console.log(errors))
+    }
+}
+
+export const removeCrewMember = (id) => {
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/crew_members/${id}`, {
+            method: "DELETE"
+        })
+        .then(resp => resp.json())
+        .then(json => {
+            dispatch({type: "REMOVE_CREWMEMBER", payload: json})
         })
     }
 }
