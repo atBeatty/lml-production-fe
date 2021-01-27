@@ -30,9 +30,10 @@ export const addProduction = (production) => {
         .then(json => {
             dispatch({type: "ADD_PRODUCTION", payload: json})
         })
-        // .catch(err => {
-        //     dispatch({type: "ADD_PRODUCTION", payload: "ERROR"})
-        // })
+        .catch(err => {
+            debugger
+            console.log(err)
+        })
     }
 }
 

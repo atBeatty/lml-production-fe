@@ -8,9 +8,7 @@ import Production from './Production'
 class ProductionContainer extends React.Component {
    constructor(props) {
        super(props)
-       this.state = {
-           productions: []
-       }
+      
    }
    
 
@@ -18,16 +16,14 @@ class ProductionContainer extends React.Component {
         this.props.fetchProductions()
         
     }
+    shouldComponentUpdate(oldState, newState, oldProps, newProps) {
+        console.log(oldState, newState, oldProps, newProps)
+        return true
+    }
+
 
     productionsToJSX = () => {
-        console.log(this.props.productions)
-        if(typeof this.props.productions == "array", typeof this.props.productions) {
-            debugger
-            return this.props.productions.map(p => <ProductionCard key={p.id} production={p}/>)
-
-        } else {
-            return <div className="error">Error</div>
-        }
+        return this.props.productions.map((p, i) => <ProductionCard key={p.i} production={p}/>)
     }
 
     render() {

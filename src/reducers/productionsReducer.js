@@ -6,13 +6,9 @@ export default (state=[], action) => {
             return [...action.payload]
         case 'ADD_PRODUCTION':
 
-            if(!!action.payload.id) {
-                
-                return [...state, action.payload]
-            } else {
-                return action.payload
-            }
-        
+            
+            return [...state, action.payload]
+                   
         case 'ADD_CREW':
             
             return [...state, action.payload]
