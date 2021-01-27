@@ -7,20 +7,22 @@ Booking Link https://go.oncehub.com/StructuredProgramFinalProjectReviews
 
 Are you error handling? What happens if your server is turned off - do you alert the user that their information did not save?
 
-What should I be prepared to answer
-
 What is the difference between state and props
+_PROPS are prop-erties of Components that can be passed in from parent relationships_
+_STATE is associated with a component, and as an object carries all of mutable data the Component needs access to_
 When do we use one over the other
-
-Props are pass properties that can be nearly any type of data. They allow, in particular, presentational props, very reusable.
+_Component's state can change during lifecycles of Component, props are  fixed or immutable_
+_Props are pass properties that can be nearly any type of data. They allow, in particular, presentational props, very reusable._
 What is the difference between functional and class components
+_A functional component returns JSX, instead of using a render method. It doesn't extend Component, so it hasn't inherited what is needed to store state. Functional components can still receive props, but notice above that they have to explicitly be written as the argument for the function._
 When should you use which
-
+_Presentational vs need for state_
 Why do we use setState instead of just reassigning the state value
+_Hey, you need to update state to this value when you have a chance. We need a way to distinguish initilizing state._
 Why is setState async
-
+_Async is helpful bc it allows for faster programming_
 What is the virtual DOM
-
+_It's all about the rebuild_
 Is your application a SPA
 
 What is the difference between client-side and server-side routing

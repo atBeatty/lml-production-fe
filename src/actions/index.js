@@ -26,12 +26,17 @@ export const addProduction = (production) => {
             },
             body: JSON.stringify(production)
         })
-        .then(resp => resp.json())
+        .then(resp => {console.log(resp);return resp.json()})
         .then(json => {
             dispatch({type: "ADD_PRODUCTION", payload: json})
-        }).catch(errors => console.log(errors))
+        })
+        // .catch(err => {
+        //     dispatch({type: "ADD_PRODUCTION", payload: "ERROR"})
+        // })
     }
 }
+
+
 
 export const removeCrewMember = (id) => {
     return (dispatch) => {

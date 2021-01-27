@@ -14,6 +14,12 @@ class Production extends React.Component {
         }
     }
 
+    componentDidCatch(error, info) {
+        console.log(error, info)
+        debugger
+    }
+     
+
     componentDidMount() {
         let pageId = parseInt(window.location.href.slice(-1))
         this.props.fetchProduction(pageId)
