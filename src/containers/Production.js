@@ -32,14 +32,12 @@ class Production extends React.Component {
 
     render() {
         console.log(this.props.production)
-        return <div className="production-container border">
-            {/* <h1>{this.props.production.name}</h1>
-            <h2>{this.props.production.client}</h2> */}
-
+        return (
+        <div className="production-container border">
             <ProductionDetails crew={this.props.production.crew_members} production={this.props.production} deleteMember={this.props.removeCrewMember}/>
-
             <CrewMemberInput production={this.props.production} addCrewMember={this.props.addCrewMember}/>
-            </div>
+        </div>
+        )
     }
 }
 

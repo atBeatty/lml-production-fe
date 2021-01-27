@@ -28,10 +28,13 @@ export const addProduction = (production) => {
         })
         .then(resp => {console.log(resp);return resp.json()})
         .then(json => {
+            // FULL PRODUCTION or NOT?
+            debugger
             dispatch({type: "ADD_PRODUCTION", payload: json})
         })
         .catch(err => {
             debugger
+            // JAVASCRIPT ERRORS/NOT STATUS CODES
             console.log(err)
         })
     }

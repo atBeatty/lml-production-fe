@@ -8,13 +8,11 @@ import Production from './Production'
 class ProductionContainer extends React.Component {
    constructor(props) {
        super(props)
-      
    }
    
 
     componentDidMount() {
         this.props.fetchProductions()
-        
     }
     shouldComponentUpdate(oldState, newState, oldProps, newProps) {
         console.log(oldState, newState, oldProps, newProps)
@@ -23,7 +21,7 @@ class ProductionContainer extends React.Component {
 
 
     productionsToJSX = () => {
-        return this.props.productions.map((p, i) => <ProductionCard key={p.i} production={p}/>)
+        return this.props.productions.map((p, i) => <ProductionCard key={i} production={p}/>)
     }
 
     render() {

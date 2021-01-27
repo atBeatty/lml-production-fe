@@ -24,50 +24,81 @@ _Async is helpful bc it allows for faster programming_
 What is the virtual DOM
 _It's all about the rebuild_
 Is your application a SPA
+_Basically, yes_
 
 What is the difference between client-side and server-side routing
+_client-side: window, front-end, visual, DOM_
+_server-side: Rails_
 Is there any connection between the two
-
+_persistence!_
 How does client-side routing work
+_render components associated with routes_
 What components do we use from the react router library to set up client-side routing
+_BrowserRouter/Link/Route_
 
 What is Redux
+_Top level accessible store set up in index_
+_Global state manager_
 Why would we use it
+_Keep data in same place/simplifies larger apps reducing amount of needing to pass props_
+_state horizontal as opposed to vertical_
+
 
 How do we set up redux
+_wrapper <Provider store>_
+_initial store_
 What components/functions do we use from the redux library
+_{ connect }_
+_mapStateToProps/mapDispatchToProps_
 
 How do we give components access to the redux store
 
 What is redux thunk middleware
+_allows management of async fetches_
+_enables us to use dispatch(action.type, action.payload) in a fetch_
+_to the store..._
 When and why would we need it
-
+_any fetch to external, handles asynchronous_
 What is the flow of your application
 In what order do things happen
 
 What is the difference between passing mapDispatchToProps vs. passing an object
+_action index file/all functions that are exported to component props_
 How does connect handle these differently
 
 What is the difference between mapStateToProps and mapDispatchToProps
 
 What do we need in our application to enable components to access the redux store
 
+_^^^_
+_intitial setup with <Provider /> and connectStore_
+
 What triggers a component to re-render
+_setState_
+_if parent passes down props that change_
 
 Does a re-render of a class component mean a NEW component object is created
 Hint: does the constructor get invoked again on a re-render
+_No, the render() runs again, but not the constructor_
+_re painting from the diff_
+_virtual DOM_
 
 What are the common lifecycle methods
+_didMount, didUpdate, didCatch_
 In what order do lifecycle methods get invoked
-
+_constructor, didMount, render, ..._
 When does componentDidMount get executed
 
 Can we send data from a child component to a parent component
+_the child can carry a prop that is a callback function_
+
 
 What do the terms container and presentational mean
 Are these actually types of components
 
 What is a reducer
+_interaction with the store_
+_layer between component and store
 
 How do we update the redux store
 
